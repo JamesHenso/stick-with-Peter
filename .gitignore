@@ -1,0 +1,81 @@
+# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# -----------------------------
+# Frontend (React / Vite / Node)
+# -----------------------------
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/.cache/
+frontend/coverage/
+
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/lerna-debug.log*
+frontend/*.local
+
+# -----------------------------
+# Backend (FastAPI / Python)
+# -----------------------------
+backend/.venv/
+backend/venv/
+backend/env/
+
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/*$py.class
+
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/.hypothesis/
+backend/.pyre/
+backend/.tox/
+backend/.nox/
+backend/.coverage
+backend/.coverage.*
+backend/htmlcov/
+backend/.cache/
+
+backend/build/
+backend/dist/
+backend/*.egg-info/
+backend/.eggs/
+
+# Local app/runtime files
+backend/*.db
+backend/*.sqlite3
+backend/uploads/
+
+# -----------------------------
+# Environment / Secrets
+# -----------------------------
+serviceAccountKey.json
+.env
+.env.*
+!.env.example
+!.env.sample
+
+backend/.env
+backend/.env.*
+!backend/.env.example
+!backend/.env.sample
+
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+!frontend/.env.sample
+    
