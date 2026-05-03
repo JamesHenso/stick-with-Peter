@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+	--font-lexend: "Lexend", sans-serif;
+}
+
+@theme {
+	--font-caveat: "Caveat", sans-serif;
+}
+
+@theme {
+	--font-patrick-hand: "Patrick Hand", sans-serif;
+}
+
+@keyframes push-and-exit {
+	0% {
+		transform: translateY(0px);
+	}
+	30% {
+		transform: translateY(-400px);
+	}
+	45% {
+		transform: translateY(-400px);
+	}
+	100% {
+		transform: translateY(100vh);
+	}
+}
