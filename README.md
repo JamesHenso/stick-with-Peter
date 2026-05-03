@@ -1,14 +1,10 @@
-# Stick Note & Chat Workspace
+# Stick Note
 
-A full-stack web application featuring a modern **Sticky Note Board** with Drag-and-Drop capabilities and an integrated **Persistent ChatBot System**. Built with React + Vite on the frontend and Python FastAPI on the backend, fully secured and powered by Firebase.
+A full-stack web application featuring a modern **Sticky Note Board** with Drag-and-Drop capabilities. Built with React + Vite on the frontend and Python FastAPI on the backend, fully secured and powered by Firebase.
 
 ## 🚀 Features
 
 - **Interactive Sticky Notes**: Create, edit, group, and drag-and-drop notes on a dynamic board.
-- **Smart Chat System**:
-    - Persistent chat history across sessions.
-    - Automatic conversation title generation.
-    - Floating sidebar and full-size chat modes.
 - **Task Management**: Create, update status, and delete tasks.
 - **Authentication**: Secure Google Sign-in powered by Firebase Auth.
 - **Modern UI/UX**: Built with Tailwind CSS v4, smooth animations, Lottie graphics, and customized typography.
