@@ -1,3 +1,8 @@
+
+
+https://github.com/user-attachments/assets/68f74f2b-ac1a-4698-b457-ce2176193c2c
+
+
 # Stick Note
 
 A full-stack web application featuring a modern **Sticky Note Board** with Drag-and-Drop capabilities. Built with React + Vite on the frontend and Python FastAPI on the backend, fully secured and powered by Firebase.
