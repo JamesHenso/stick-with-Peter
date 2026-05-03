@@ -96,6 +96,7 @@ A full-stack web application featuring a modern **Sticky Note Board** with Drag-
 
 ```bash
 cd backend
+pip install -r requirements.txt
 uvicorn main:app --reload
 # Server will start on http://127.0.0.1:8000
 ```
@@ -104,6 +105,7 @@ uvicorn main:app --reload
 
 ```bash
 cd frontend
+npm install
 npm run dev
 # App will start on http://localhost:5173
 ```
