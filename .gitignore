@@ -26,6 +26,7 @@ Thumbs.db
 **/.cache/
 **/coverage/
 **/*.tsbuildinfo
+backend/src/generated/prisma/
 *.local
 
 # Environment files and credentials
@@ -42,6 +43,7 @@ backend/*.sqlite
 backend/*.sqlite3
 backend/uploads/
 
-animation
-vector
-fonts
+# Project asset folders
+/animation/
+/vector/
+/fonts/
