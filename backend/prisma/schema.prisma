@@ -1,9 +1,79 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
+enum TaskStyle{
+  PENCIL
+  BRUSH
+}
+
+enum TaskPriority{
+  LOW
+  MEDIUM
+  HARD
+}
+
+model User{
+  id String @id @default(uuid())
+  email String @unique
+  password String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  notes Note[]
+
+  @@map("users")
+}
+
+model Note{
+  id String @id @default(uuid())
+  userId String
+  title String
+  positionX Int
+  positionY Int
+  isDue Boolean @default(false)
+  isPinned Boolean @default(false)
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tasks Task[]
+
+  @@index([userId])
+  @@map("notes")
+}
+
+model Task{
+  id String @id @default(uuid())
+  noteId String
+  content String
+  style TaskStyle @default(PENCIL)
+  isCompleted Boolean @default(false)
+  pritority TaskPriority @default(MEDIUM)
+  dueDate DateTime?
+  stickerId String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  note Note @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  sticker Sticker? @relation(fields: [stickerId], references: [id], onDelete: SetNull)
+
+  @@index([noteId])
+  @@index([stickerId])
+  @@map("tasks")
+}
+
+model Sticker{
+  id String @id @default(uuid())
+  name String
+  url String
+  created_at DateTime @default(now())
+
+  tasks Task[]
+
+  @@map("stickers")
+}
