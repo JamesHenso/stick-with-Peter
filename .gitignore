@@ -26,7 +26,6 @@ Thumbs.db
 **/.cache/
 **/coverage/
 **/*.tsbuildinfo
-backend/src/generated/prisma/
 *.local
 
 # Environment files and credentials

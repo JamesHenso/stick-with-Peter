@@ -2,6 +2,7 @@ packages:
   - "frontend"
   - "backend"
 allowBuilds:
-  '@prisma/engines': set this to true or false
+  '@prisma/engines': true
+  bcrypt: true
   esbuild: true
-  prisma: set this to true or false
+  prisma: true
