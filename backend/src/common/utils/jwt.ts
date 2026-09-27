@@ -1,16 +1,17 @@
 import jwt from "jsonwebtoken";
 
 import type { JwtPayloadUser } from "../types/express.js";
+import { AppError } from "./appError.js";
 
 const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET;
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET;
 
 if (!JWT_ACCESS_SECRET) {
-    throw new Error("JWT_ACCESS_SECRET is not defined");
+    throw new AppError("Unauthorized", 401);
 }
 
 if (!JWT_REFRESH_SECRET) {
-    throw new Error("JWT_REFRESH_SECRET is not defined");
+    throw new AppError("Unauthorized", 401);
 }
 
 const JWT_ACCESS_EXPIRES_IN: jwt.SignOptions["expiresIn"] =
@@ -38,7 +39,7 @@ export const verifyAccessToken = (token: string): JwtPayloadUser => {
         typeof decoded === "string" ||
         typeof decoded.id !== "string"
     ) {
-        throw new Error("Invalid access token");
+        throw new AppError("Unauthorized", 401);
     }
 
     return {
@@ -53,7 +54,7 @@ export const verifyRefreshToken = (token: string): JwtPayloadUser => {
         typeof decoded === "string" ||
         typeof decoded.id !== "string"
     ) {
-        throw new Error("Invalid refresh token");
+        throw new AppError("Unauthorized", 401);
     }
 
     return {
