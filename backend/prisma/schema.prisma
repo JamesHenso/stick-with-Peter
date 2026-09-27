@@ -14,7 +14,7 @@ enum TaskStyle{
 enum TaskPriority{
   LOW
   MEDIUM
-  HARD
+  HIGH
 }
 
 model User{
@@ -35,7 +35,6 @@ model Note{
   title String
   positionX Int
   positionY Int
-  isDue Boolean @default(false)
   isPinned Boolean @default(false)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -53,7 +52,7 @@ model Task{
   content String
   style TaskStyle @default(PENCIL)
   isCompleted Boolean @default(false)
-  pritority TaskPriority @default(MEDIUM)
+  priority TaskPriority @default(MEDIUM)
   dueDate DateTime?
   stickerId String?
   created_at DateTime @default(now())
