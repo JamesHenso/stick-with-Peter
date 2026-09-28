@@ -22,6 +22,7 @@ export const errorHandler = (
                 success: false,
                 message: `Value of ${target} is not available`
             })
+            return;
         }
 
         if(err.code === "P2025"){
@@ -29,6 +30,7 @@ export const errorHandler = (
                 success: false,
                 message: "Record not found"
             })
+            return;
         }
     }
 
