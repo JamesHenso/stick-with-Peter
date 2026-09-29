@@ -7,21 +7,22 @@ export const authenticate = (
     res: Response,
     next: NextFunction
 ): void => {
-    const authHeader = req.headers.authorization
+    const authHeader = req.headers.authorization;
 
-    if(!authHeader || !authHeader.startsWith("Bearer ")){
-        throw new AppError("Please Login", 401)
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        throw new AppError("Please Login", 401);
     }
 
-    const token = authHeader.slice("Bearer ".length).trim()
+    const token = authHeader.slice("Bearer ".length).trim();
     if (!token) {
-        throw new AppError("Please Login", 401)
+        throw new AppError("Please Login", 401);
     }
-    try{
-        const decoded = verifyAccessToken(token)
-        req.user = decoded
-        next()
-    } catch(error){
-        throw new AppError("Invalid token", 401)
+
+    try {
+        const decoded = verifyAccessToken(token);
+        req.user = decoded;
+        next();
+    } catch (error) {
+        next(error);
     }
-}
+};
