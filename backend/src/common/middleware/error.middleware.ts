@@ -13,6 +13,7 @@ export const errorHandler = (
             success: false,
             message: err.message,
         })
+        return;
     }
 
     if(err instanceof Prisma.PrismaClientKnownRequestError){

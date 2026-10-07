@@ -14,7 +14,7 @@ export const validate = (schema: ZodObject) => async (
         });
 
         req.body = parsed.body ?? req.body
-        Object.defineProperty(req.query, "query", {
+        Object.defineProperty(req, "query", {
             configurable: true,
             enumerable: true,
             value: parsed.query ?? req.query,
