@@ -9,6 +9,7 @@
     "db:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "build": "tsc --noEmit",
+    "dev": "tsx watch src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
